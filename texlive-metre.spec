@@ -1,3 +1,9 @@
+# revision 18489
+# category Package
+# catalog-ctan /macros/latex/contrib/metre
+# catalog-date 2007-03-09 22:25:45 +0100
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-metre
 Version:	1.0
 Release:	1
@@ -62,6 +68,7 @@ are based on TeX primitives.
 #- source
 %doc %{_texmfdistdir}/source/latex/metre/metre.dtx
 %doc %{_texmfdistdir}/source/latex/metre/metre.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -72,3 +79,5 @@ are based on TeX primitives.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
