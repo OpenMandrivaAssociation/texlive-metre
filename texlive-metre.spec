@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-metre
 Version:	1.0
-Release:	3
+Release:	4
 Summary:	Support for the work of classicists
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/metre
