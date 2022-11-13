@@ -1,19 +1,13 @@
-# revision 18489
-# category Package
-# catalog-ctan /macros/latex/contrib/metre
-# catalog-date 2007-03-09 22:25:45 +0100
-# catalog-license lppl
-# catalog-version 1.0
 Name:		texlive-metre
-Version:	1.0
-Release:	12
+Version:	18489
+Release:	1
 Summary:	Support for the work of classicists
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/metre
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/metre.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/metre.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/metre.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/metre.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/metre.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/metre.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -35,12 +29,12 @@ included in all TeX distributions) and the package's commands
 are based on TeX primitives.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -61,24 +55,11 @@ are based on TeX primitives.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
-+ Revision: 753932
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 719005
-- texlive-metre
-- texlive-metre
-- texlive-metre
-- texlive-metre
-
