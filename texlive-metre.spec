@@ -1,6 +1,6 @@
 Name:		texlive-metre
 Version:	18489
-Release:	1
+Release:	2
 Summary:	Support for the work of classicists
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/metre
